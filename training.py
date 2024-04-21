@@ -43,14 +43,6 @@ X_custom, y_custom = load_images_from_folder(folder_path)
 # Concatenate custom data with MNIST data
 X_train = np.concatenate((X_train, X_custom), axis=0)
 y_train = np.concatenate((y_train, y_custom), axis=0)
-
-X_train2 = mnist.test_images()
-Y_train2 = mnist.test_labels()
-Y_train2 = Y_train2.astype(np.int32)
-X_train2 = X_train2.reshape(-1, 28*28) / 255.0
-
-X_train = np.concatenate((X_train, X_train2), axis=0)
-y_train = np.concatenate((y_train, Y_train2), axis=0)
 print(len(X_train))
 print('X_train shape:', X_train.shape)
 print('y_train shape:', y_train.shape)
